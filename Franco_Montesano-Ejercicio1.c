@@ -21,14 +21,21 @@ float Examenfinal;
 float TrabajoFinal;
 float NotaFinal;
 
+int Numuno;
+int Numdos;
+
+double km1 = 70;
+double km2 = 150;
+double encuentro;
+
 
 
   printf("A que ejercicio queres acceder?? \n");
         printf("1: Calcular el precio del micro\n");
         printf("2: Calcular sueldo final \n");
         printf("3: Calcilar calificacion final de la materia algoritmos\n");
-        printf("4:\n");
-        printf("5:\n");
+        printf("4: Encontrar pares entre dos numeros\n");
+        printf("5: Encontrar el kilometro en el que se encontraran dos autos\n");
         scanf("%d", &decision);
 
 
@@ -118,12 +125,27 @@ float NotaFinal;
     {
         printf("usted ingreso algun dato mal");
     }
-    
     printf("la nota final de la materia sera %f", NotaFinal);
-
     break;
    
+    case 4:
+    printf("ingrese el valor limite mas chico\n");
+    scanf("%d", &Numuno);
+    printf("ingrese el valor limite mas grande\n");
+    scanf("%d", &Numdos);
+    printf("\n");
+    
+    for(int i; i <= Numdos; i++){
+        if(i % 2 == 0 && i > Numuno){
+            printf("%d \t", i);
+        }
+    }
+    break;
 
+    case 5:
+    encuentro = (km2 + km1) / 2;
+    printf("se encontraran en el kilometro %f", encuentro);
+    break;
     }
 
 }
