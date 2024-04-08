@@ -21,21 +21,24 @@ int prueba4;
 int NotaTarea;
 int promedio2;
 
+int notaPrueba;
+
 printf("A que ejercicio queres acceder?\n");
 printf("1: suma de tres numeros consecutivos\n");
 printf("2: calcular el promedio de tres numeros\n");
 printf("3: averiguar si es par o impar\n");
 printf("4: Calcular si aprobo\n");
-printf("5:\n");
+printf("5: ingrese la nota de su evaluacion\n");
 scanf("%d", &decision);
 
 switch (decision)
 {
 case 1:
+
     numuno = (87/3) - 1;
     numdos=(87/3) + 1;
     numtres = (87/3);
-    printf("%f + %f + %f =87\n", numuno, numdos, numtres );
+    printf("%d + %d + %d =87\n", numuno, numdos, numtres );
     break;
 
     case 2:
@@ -68,14 +71,36 @@ case 1:
         printf("El alumno aprobó, su promedio es %d\n", promedio);
     }
     else{
-        printf("el alumno no aprobó, su promedio es %d\n", promedio);
+        printf("el alumno no aprobó, su promedio es %f\n", promedio);
     }
     
 
     break;
 
+    case 5:
+    printf("ingese la nota de su evaluacion\n");
+    scanf("%d", &notaPrueba);
+
+    if(notaPrueba >= 6){
+        printf("Aprobado \n");
+    }
+    else if (notaPrueba <= 6)
+    {
+        printf("Reprobado\n");
+    }
+    else if (notaPrueba <= 1){
+        printf("debes esforzarte mas \n");
+    }
+    else if (notaPrueba >= 8);
+    {
+        printf("felicitaciones \n");
+    }
+    break;
+
+    case 6:
 }
 
 
 
 }
+
