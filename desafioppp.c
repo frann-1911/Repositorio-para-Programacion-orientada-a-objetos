@@ -22,28 +22,29 @@ int main() {
 			printf("El jugador eligio %s\n",ppp[eleccion - 1]);
 			printf("La maquina eligio %s\n",ppp[maquina - 1]);
 			printf("\n");
-			if(eleccion == 1 && maquina == 3 || eleccion == 2 && maquina == 1 || eleccion == 3 && maquina == 2) { // Gana jugador
-            puts("GANO EL JUGADOR LA VUELTA");	
-            vueltaj++;
+			if(eleccion == 1 && maquina == 3 || eleccion == 2 && maquina == 1 || eleccion == 3 && maquina == 2) {   // Gana jugador 
+			vueltaj++;
+            printf("GANO EL JUGADOR LA VUELTA, VAN \n JUGADOR: %d MAQUINA: %d \n",vueltaj,vueltam);
+            
 			}
-			else if(maquina == 1 && eleccion == 3 || maquina == 2 && eleccion == 1 || maquina == 3 && eleccion == 2) { // Gana maquina
-            puts("GANO LA MAQUINA LA VUELTA");
-            vueltam++;
+			else if(maquina == 1 && eleccion == 3 || maquina == 2 && eleccion == 1 || maquina == 3 && eleccion == 2) {// Gana maquina
+			vueltam++;
+            printf("GANO LA MAQUINA LA VUELTA, VAN \n JUGADOR: %d MAQUINA: %d \n",vueltaj,vueltam);
 			}
 			else if(maquina == eleccion) { // empate
 				j--;
-				printf("HA SIDO EMPATE\n");
+				printf("HA SIDO EMPATE, VAN \n JUGADOR: %d MAQUINA: %d \n", vueltaj, vueltam);
 			}
 			printf("\n");
 		}
 		if(vueltaj > vueltam){
 			rondaj++;
-			puts("GANO EL JUGADOR LA RONDA");
+			printf("GANO EL JUGADOR LA RONDA, VAN \n JUGADOR: %d MAQUINA: %d", rondaj, rondam);
 				printf("\n");
 		}
 		else{
 			rondam++;
-			puts("GANO LA MAQUINA LA RONDA");
+			printf("GANO LA MAQUINA LA RONDA, VAN \n JUGADOR: %d MAQUINA: %d", rondaj, rondam);
 				printf("\n");
 		}
 		vueltaj = 0;
