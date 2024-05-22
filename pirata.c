@@ -21,11 +21,11 @@ void tablero(){
     for(int i = 0; i < num;i++){
     	for(int j = 0; j < num;j++){
     		if(i == 0 && j == num - 1 || i == num - 1 && j == 0){
-    		tabla[i][j] = "|B|";	
+    		tabla[i][j] = "\033[0;31m|B|\033[0m";	
 			}else if(i == 0 || i == num - 1 || j == 0 || j == num - 1){
-    		tabla[i][j] = "|A|";	
+    		tabla[i][j] = "\033[0;34m|A|\033[0m";	
 			}else{
-    		tabla[i][j] = "|-|";
+    		tabla[i][j] = "\033[1;33m|-|\033[0m";
 			}
 		}
 	}
@@ -96,16 +96,16 @@ void moverse(int num, char *tabla[num][num], int piratac, int pirataf, int tesor
 	printf("%d %d\n", tesorof + 1, tesoroc + 1);
 	scanf(" %c",&movimiento);
 	if(movimiento == 'N' || movimiento == 'n'){
-		tabla[pirataf][piratac] = "|-|";
+		tabla[pirataf][piratac] = "\033[1;33m|-|\033[0m";
 		pirataf--;
 	}else if(movimiento == 'S' || movimiento == 's'){
-		tabla[pirataf][piratac] = "|-|";
+		tabla[pirataf][piratac] = "\033[1;33m|-|\033[0m";
 		pirataf++;
 	}else if(movimiento == 'O' || movimiento == 'o'){
-		tabla[pirataf][piratac] = "|-|";
+		tabla[pirataf][piratac] = "\033[1;33m|-|\033[0m";
 		piratac--;
 	}else if(movimiento == 'E' || movimiento == 'e'){
-		tabla[pirataf][piratac] = "|-|";	
+		tabla[pirataf][piratac] = "\033[1;33m|-|\033[0m";	
 		piratac++;
 	}
 	tabla[pirataf][piratac] = "|P|";
