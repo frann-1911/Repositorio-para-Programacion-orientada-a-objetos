@@ -34,10 +34,38 @@ void ej3(){
 }
 
 void ej4(){
-	
+int anio[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+int mes = 0;
+int dia = 0;
+int dia_del_anio = 0;
+printf("Ingrese un mes utilizando el numero que le corresponde al mismo. Ejemplo Octubre = 10\n");
+scanf("%d", &mes);
+printf("Ingrese el dia del mes que eligio\n");
+scanf("%d", &dia);
+  for (int i = 0; i < mes - 1; i++) {
+        dia_del_anio += anio[i];
+    }
+	    dia_del_anio += dia;
+
+    printf("El dia %d del mes %d es el dia numero %d del anio.\n", dia, mes, dia_del_anio);
+
 }
 void ej5(){
-	
+
+	int anio[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+int mes = 0;
+int dia = 0;
+int dia_del_anio = 0;
+printf("Ingrese un mes utilizando el numero que le corresponde al mismo. Ejemplo Octubre = 10\n");
+scanf("%d", &mes);
+printf("Ingrese el dia del mes que eligio\n");
+scanf("%d", &dia);
+  for (int i = 0; i < mes - 1; i++) {
+        dia_del_anio += anio[i];
+    }
+	    dia_del_anio += dia;
+  printf("El dia %d del mes %d quedaran %d dias para que termine el anio\n", dia, mes, 365-dia_del_anio);
+
 }
 void ej6(){
 	int numeros[9];
@@ -46,6 +74,32 @@ void ej6(){
 	for(int i = 9; i >= 0; i--){
 		printf("%d ", numeros[i]);
 	}
+}
+void ej7(){
+
+float numeros[10];
+float media = 0;
+printf("ingrese 10 numeros reales , es decir pueden contener decimales y ser negativos, separados por espacios\n");
+scanf("%f %f %f %f %f %f %f %f %f %f", &numeros[0], &numeros[1], &numeros[2], &numeros[3], &numeros[4], &numeros[5], &numeros[6], &numeros[7], &numeros[8], &numeros[9]);
+media = (numeros[0] +  numeros[1] + numeros[2] + numeros[3] + numeros[4] + numeros[5] + numeros[6] + numeros[7] + numeros[8] + numeros[9])/10;
+printf("Los numeros mayores a la media son\n");
+
+for (int i = 0; i < 10; i++)
+{
+	if (numeros[i] > media)
+	{
+		printf("\033[0;34m%.2f\033[0m\t", numeros[i]);
+	
+	}
+	
+}
+}
+void ej8(){
+	/*Un programa que pida al usuario 10 números enteros y calcule (y muestre) cuál es el mayor de ellos.*/
+	float numeros[10];
+printf("ingrese 10 numeros\n");
+scanf("%f %f %f %f %f %f %f %f %f %f", &numeros[0], &numeros[1], &numeros[2], &numeros[3], &numeros[4], &numeros[5], &numeros[6], &numeros[7], &numeros[8], &numeros[9]);
+
 }
 
 int main(){
@@ -63,12 +117,30 @@ switch(decision){
     	ej3();
 	break;
 	case 4:
+	ej4();
 	break;
 	case 5:
+	ej5();
 	break;
 	case 6:
 		ej6();
 	break;
+	case 7:
+	ej7();
+	break;
+	case 8:
+	ej8();
+	break;
+	case 9:
+	break;
+	case 10:
+	break;
+	case 11:
+	break;
+	case 12: 
+	break;
+
+	
 	
 }
 
