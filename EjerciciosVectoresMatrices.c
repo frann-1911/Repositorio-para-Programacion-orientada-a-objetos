@@ -95,12 +95,44 @@ for (int i = 0; i < 10; i++)
 }
 }
 void ej8(){
-	/*Un programa que pida al usuario 10 números enteros y calcule (y muestre) cuál es el mayor de ellos.*/
 	float numeros[10];
+	float maximo;
 printf("ingrese 10 numeros\n");
 scanf("%f %f %f %f %f %f %f %f %f %f", &numeros[0], &numeros[1], &numeros[2], &numeros[3], &numeros[4], &numeros[5], &numeros[6], &numeros[7], &numeros[8], &numeros[9]);
+maximo = numeros[0];
+  for (int i = 1; i < 10; i++) {
+        if (numeros[i] > maximo) {
+            maximo = numeros[i];
+        }
+    }
+    printf("El numero mayor es: %.2f\n", maximo);
 
 }
+
+void ej9(){
+int vector1[2];
+int vector2[2];
+printf("ingrese las coordenadas del primer vector \n");
+scanf("%d %d",  &vector1[0], &vector1[1]);
+printf("ingrese las coordenadas del segundo vector \n");
+scanf("%d %d", &vector2[0], &vector2[1]);
+int vector3[2] = {(vector1[0]-vector2[0]), (vector1[1]-vector2[1])};
+printf("el nuevo vector es:\n");
+for (int i = 0; i < 2; i++)
+{
+	printf("%d ", vector3[i]);
+}
+}
+
+void ej10(){
+	/*Un programa que pida al usuario las componentes de dos vectores en el espacio (3 coordenadas) y calcule su producto escalar. 
+	Investigar cómo se realizan los cálculos matemáticos sobre vectores.*/
+	
+
+
+
+}
+
 
 int main(){
 int decision;
@@ -132,8 +164,10 @@ switch(decision){
 	ej8();
 	break;
 	case 9:
+	ej9();
 	break;
 	case 10:
+	ej10();
 	break;
 	case 11:
 	break;
