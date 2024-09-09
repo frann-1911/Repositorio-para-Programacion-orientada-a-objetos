@@ -127,6 +127,7 @@ default:
     System.out.println("Introduce un dia de la semana");
 
 }
+leer.close();
 }
 
 
