@@ -1,8 +1,5 @@
-package Ejercicios12EnAdelante;
-
 import java.util.Scanner;
 import java.util.Random;
-
 
 public class ejerciciosNueveDelNueve {
 	public static void main(String[] args) {
@@ -38,7 +35,7 @@ public class ejerciciosNueveDelNueve {
 	        break;
 	    }
 	    leer.close();
-		}
+	}
 	public static void ejercicio18() {
 		Scanner leer = new Scanner(System.in);
 		System.out.println("Ingrese dos numeros para generar aleatorios entre ambos");
@@ -116,23 +113,31 @@ leer.close();
 	
 	public static void ejercicio22() {
 		String vocales = "La lluvia en Sevilla es una maravilla";
-		int tamaño = vocales.length();
+		int tamanio = vocales.length();
 		int cantVocales = 0;
-		char temp;
-		String a = "a";
-		for(int i = 0; i<=tamaño; i++) {
-		temp = vocales.charAt(i);
-		if(temp.equals(a)) {
-			
+		for(int i = 0; i<tamanio; i++) {
+		if(vocales.charAt(i)=='a'||vocales.charAt(i)=='e'||vocales.charAt(i)=='i'||vocales.charAt(i)=='o'||vocales.charAt(i)=='u') {
+		cantVocales ++;	
 		}
+		
 		}
+		System.out.println("Hay "+cantVocales+ " Vocales");
 		
 				}
 	public static void ejercicio23() {
-		
+		String sevilla = "La lluvia en Sevilla es una maravilla";
+		System.out.println(sevilla);
+		System.out.println("ahora lo cambiamos");
+
+		System.out.print(sevilla.replace('a', 'e'));
+
 	}
 	public static void ejercicio24() {
-		
+		String sevilla = "La lluvia en Sevilla es una maravilla";
+		int tamanio = sevilla.length();
+		for(int i = 0;i<tamanio;i++) {
+			System.out.print((int)sevilla.charAt(i)+" ");
+		}
 	}
 	
 }
