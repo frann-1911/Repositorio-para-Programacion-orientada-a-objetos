@@ -115,8 +115,19 @@ leer.close();
 
 	
 	public static void ejercicio22() {
+		String vocales = "La lluvia en Sevilla es una maravilla";
+		int tamaño = vocales.length();
+		int cantVocales = 0;
+		char temp;
+		String a = "a";
+		for(int i = 0; i<=tamaño; i++) {
+		temp = vocales.charAt(i);
+		if(temp.equals(a)) {
+			
+		}
+		}
 		
-	}
+				}
 	public static void ejercicio23() {
 		
 	}
