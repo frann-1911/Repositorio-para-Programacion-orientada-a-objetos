@@ -1,0 +1,122 @@
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class miPrimerJFrame extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextArea Area;  
+	private JLabel Etiqueta1;
+	private JTextField textField;
+	private JLabel Etiqueta2;
+	private JLabel etiqueta3;
+	private JTextField textField_1;
+	private JTextField textField_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					miPrimerJFrame frame = new miPrimerJFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public miPrimerJFrame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 585);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		// Crear el botón
+		JButton btnPapu = new JButton("Calcular BMI");
+		btnPapu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					// Obtener los valores ingresados
+					String nombre = textField.getText();
+					double altura = Double.parseDouble(textField_1.getText()); // Altura en cm
+					double peso = Double.parseDouble(textField_2.getText());   // Peso en kg
+					
+					// Convertir la altura a metros
+					altura = altura / 100;
+					
+					// Calcular el BMI
+					double bmi = peso / (altura * altura);
+					
+					// Mostrar el resultado en el JTextArea
+					Area.append("Nombre: " + nombre + "\n");
+					Area.append("Tu BMI es: " + String.format("%.2f", bmi) + "\n");
+					
+					// Añadir una interpretación del BMI
+					if (bmi < 18.5) {
+						Area.append("Estado: Bajo peso\n");
+					} else if (bmi >= 18.5 && bmi < 24.9) {
+						Area.append("Estado: Normal\n");
+					} else if (bmi >= 25 && bmi < 29.9) {
+						Area.append("Estado: Sobrepeso\n");
+					} else {
+						Area.append("Estado: Obesidad\n");
+					}
+					
+					Area.append("\n");  // Añadir un salto de línea para separar los cálculos
+
+				} catch (NumberFormatException ex) {
+					Area.append("Por favor, ingresa valores válidos para peso y altura.\n");
+				}
+			}
+		});
+		btnPapu.setBounds(347, 345, 150, 23);
+		contentPane.add(btnPapu);
+		
+		// Crear el área de texto
+		Area = new JTextArea();
+		Area.setBounds(10, 379, 764, 120);
+		contentPane.add(Area);
+		
+		Etiqueta1 = new JLabel("Ingresa tu nombre");
+		Etiqueta1.setBounds(10, 11, 130, 14);
+		contentPane.add(Etiqueta1);
+		
+		textField = new JTextField();
+		textField.setBounds(150, 8, 271, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		Etiqueta2 = new JLabel("Ingresa tu altura en cm");
+		Etiqueta2.setBounds(10, 69, 142, 14);
+		contentPane.add(Etiqueta2);
+		
+		etiqueta3 = new JLabel("Ingresa tu peso en kg");
+		etiqueta3.setBounds(10, 120, 130, 14);
+		contentPane.add(etiqueta3);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(183, 66, 134, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(150, 117, 134, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+	}
+}
